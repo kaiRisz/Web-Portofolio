@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Portofolio Kai</title>
+</head>
+
+<script>
+const form = document.querySelector("form");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let valid = true;
+
+    if(nameInput.value.trim() === ""){
+        alert("Name tidak boleh kosong");
+        valid = false;
+    }
+
+    if(!emailInput.value.includes("@")){
+        alert("Email tidak valid");
+        valid = false;
+    }
+
+    if(messageInput.value.trim().length < 10){
+        alert("Message minimal 10 karakter");
+        valid = false;
+    }
+
+    if(valid){
+        alert("Pesan berhasil dikirim!");
+        form.reset();
+    }
+});
+
+const navLinks = document.querySelectorAll("nav a");
+
+navLinks.forEach(link => {
+    link.addEventListener("mouseover", () => {
+        link.style.color = "#00A8FF";
+    });
+
+    link.addEventListener("mouseout", () => {
+        link.style.color = "#E2E8F0";
+    });
+});
+</script>
+
+<body>
+
+    <header>
+         <img src="images/logo-kai.png" alt="logo-kai" width="200px">
+
+         <nav id="navbar">
+            <a href="index.html" class="nav-active" >Home</a>
+            <a href="about.html" >About</a>
+            <a href="project.html">Project</a>
+            <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
+         </nav>
+    </header>
+
+    <main>
+
+         <section class="about" id="about">
+            <div class="container-about">
+                <div class="about-content">
+                    <h1>About Me</h1>
+                    <p> I am an Computer Science student with an interest in UI/UX design and web 
+                    development. I enjoy creating digital products that are simple, functional, and user-friendly. 
+                    I continuously develop my skills through projects and self-learning, while exploring 
+                    how technology can be used to solve real-world problems. I am also open to collaboration 
+                    and enjoy working with others to share ideas and build meaningful solutions.
+                    </p>
+
+                    <p> Beyond technology, I have an interest in writing as a way to express ideas and 
+                    perspectives, which I share through platforms like Medium. In my free time, I enjoy reading 
+                    novels and watching films.
+                    </p>
+                </div>
+
+                <hr class="separator">
+
+                <div class="experience-section">
+                    <h2>Experience</h2>
+                    <ul class="experience-list">
+                        <li>
+                            <strong>HRD Division Member, UKM Gradien (2024 – 2026)</strong>
+                            <em>Contributed to member management and supported internal organizational activities.</em>
+                        </li>
+                        <li>
+                            <strong>UI/UX Designer, CSS Website Division (2025)</strong>
+                            <em>Designed user interfaces and improved user experience for website-related projects.</em>
+                        </li>
+                        <li>
+                            <strong>Teaching Assistant, Introduction to Programming (2025)</strong>
+                            <em>Assisted students in understanding basic programming concepts and completing assignments.</em>
+                        </li>
+                        <li>
+                            <strong>Intern, HIMAKOM – Kestari Division (2024)</strong>
+                            <em>Assisted in administrative tasks, including preparing and managing official documents and letters.</em>
+                        </li>
+                    </ul>
+                </div>
+
+        <hr class="separator">
+
+            <div class="bottom-grid">
+                <div class="education-section">
+                    <h2>Education</h2>
+                        <ul class="education-list">
+                            <li>SDN 1 Sidomulyo (2012 – 2018)</li>
+                            <li>SMPN 2 Sumberejo (2018 – 2021)</li>
+                            <li>SMAN 1 Sumberejo (2021 – 2024)</li>
+                            <li>University of Lampung (2024 – Present)</li>
+                        </ul>
+                </div>
+
+                <div class="skills-section">
+                    <div class="skill-group">
+                        <h3>Hard Skill</h3>
+                            <div class="skill-icons">
+                                <img src="images/figma-icon.png" alt="Figma">
+                                <img src="images/vscode-icon.png" alt="VS Code">
+                                <img src="images/excel-icon.png" alt="Excel">
+                            </div>
+                    </div>
+
+                <div class="skill-group">
+                    <h3>Soft Skill</h3>
+                        <div class="skill-icons">
+                            <img src="images/html-icon.png" alt="HTML">
+                            <img src="images/css-icon.png" alt="CSS">
+                            <img src="images/c-icon.png" alt="C++">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Khaila Noverisya Nurdi. All rights reserved.</p>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+        const links = document.querySelectorAll("#navbar a");
+        let currentPage = window.location.pathname.split("/").pop();
+
+        if(currentPage === ""){
+            currentPage = "index.html";
+        }
+
+        links.forEach(link => {
+            const linkPage = link.getAttribute("href");
+
+            if(linkPage === currentPage){
+                link.classList.add("nav-active");
+            } else {
+                link.classList.remove("nav-active");
+            }
+        });
+
+    });
+    </script>
+    
+</body>
+</html>
