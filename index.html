@@ -1,141 +1,155 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <title>Portofolio Kai</title>
 </head>
-
-<script>
-const form = document.querySelector("form");
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const messageInput = document.getElementById("message");
-
-form.addEventListener("submit", function(e){
-    e.preventDefault();
-
-    let valid = true;
-
-    if(nameInput.value.trim() === ""){
-        alert("Name tidak boleh kosong");
-        valid = false;
-    }
-
-    if(!emailInput.value.includes("@")){
-        alert("Email tidak valid");
-        valid = false;
-    }
-
-    if(messageInput.value.trim().length < 10){
-        alert("Message minimal 10 karakter");
-        valid = false;
-    }
-
-    if(valid){
-        alert("Pesan berhasil dikirim!");
-        form.reset();
-    }
-});
-
-const navLinks = document.querySelectorAll("nav a");
-
-navLinks.forEach(link => {
-    link.addEventListener("mouseover", () => {
-        link.style.color = "#00A8FF";
-    });
-
-    link.addEventListener("mouseout", () => {
-        link.style.color = "#E2E8F0";
-    });
-});
-</script>
-
 <body>
-
-    <header>
-         <img src="images/logo-kai.png" alt="logo-kai" width="200px">
-
-         <nav id="navbar">
-            <a href="index.html" class="nav-active" >Home</a>
-            <a href="about.html" >About</a>
-            <a href="project.html">Project</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-         </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <img src="images/logo-kai.png" alt="Logo Kai">
+            </a>
+            <nav id="navbar">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#project">Project</a>
+                <a href="#contact">Contact</a>
+                <a href="#blog">Blog</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-
-        <section id="home" class="hero">
-
+        <section id="home" class="hero container">
             <div class="hero-text">
-                <h1>Hi There! I'm</h1><br>   
-                <h1 class="name">Khaila Noverisya Nurdi</h1><br>
-                <p>A Computer Science student passionate about UI/UX design and digital solutions. I enjoy turning ideas into simple, user-friendly experiences. I love exploring new technologies, learning from every project I work on, and continuously improving my skills to create meaningful and impactful digital products.</p>
+                <p class="eyebrow">Hi, I&apos;m</p>
+                <h1>Khaila Noverisya</h1>
+                <p class="hero-copy">I am a Computer Science student who likes UI/UX design and web development. I build clean and simple digital experiences with HTML, CSS, and JavaScript.</p>
+                <div class="hero-actions">
+                    <a href="#project" class="button">See Projects</a>
+                    <a href="#contact" class="button button-alt">Contact Me</a>
+                </div>
             </div>
-
-            <figure class="hero-img">
-                <img src="images/poto-kai.png" alt="poto-kai">
-            </figure>
+            <div class="hero-image">
+                <img src="https://ih1.redbubble.net/image.2994270695.0104/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Kaito Kid">
+            </div>
         </section>
 
-        
-        <section class="sosmed">
-            <nav class="social-media">
-                <a href="https://www.instagram.com/k.noverisyaa/?hl=en" target="_blank" class="card-sosmed" >
-                    <img src="images/instagram-icon.png" alt="Instagram" class="card-sosmed">
-                    k.noverisyaa
-                </a>
-
-                <a href="https://www.linkedin.com/in/khaila-noverisya-nurdi-aa4864309/?locale=in" target="_blank" class="card-sosmed">
-                    <img src="images/linkedin-icon.png" alt="LinkedIn" class="card-sosmed">
-                    Khaila Noverisya
-                </a>
-
-                <a href="https://github.com/kaiRisz" target="_blank" class="card-sosmed">
-                    <img src="images/github-icon.png" alt="GitHub" class="card-sosmed">
-                    kaiRisz
-                </a>
-
-                <a href="https://medium.com/@khailanoverisyanurdi" target="_blank" class="card-sosmed">
-                    <img src="images/medium-icon.png" alt="Medium" class="card-sosmed">
-                    khailanoverisyanurdi
-                </a>
-            </nav>
-
+        <section id="about" class="about container">
+            <div class="section-heading">
+                <h1>About Me</h1>
+                <p>I am a Computer Science student with an interest in UI/UX design and web development. I enjoy creating digital products that are simple, functional, and user-friendly.</p>
+            </div>
+            <div class="about-grid">
+                <div class="card">
+                    <h2>Experience</h2>
+                    <ul>
+                        <li><strong>HRD Division Member, UKM Gradien</strong><span>2024 – 2026</span></li>
+                        <li><strong>UI/UX Designer, CSS Website Division</strong><span>2025</span></li>
+                        <li><strong>Teaching Assistant, Introduction to Programming</strong><span>2025</span></li>
+                        <li><strong>Intern, HIMAKOM – Kestari Division</strong><span>2024</span></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h2>Education & Skills</h2>
+                    <div class="field-block">
+                        <h3>Education</h3>
+                        <ul>
+                            <li>SDN 1 Sidomulyo (2012 – 2018)</li>
+                            <li>SMPN 2 Sumberejo (2018 – 2021)</li>
+                            <li>SMAN 1 Sumberejo (2021 – 2024)</li>
+                            <li>University of Lampung (2024 – Present)</li>
+                        </ul>
+                    </div>
+                    <div class="field-block">
+                        <h3>Skills</h3>
+                        <div class="skill-row">
+                            <div class="skill-item"><img src="images/html-icon.png" alt="HTML"><span>HTML</span></div>
+                            <div class="skill-item"><img src="images/css-icon.png" alt="CSS"><span>CSS</span></div>
+                            <div class="skill-item"><img src="images/c-icon.png" alt="C"><span>C / C++</span></div>
+                            <div class="skill-item"><img src="images/figma-icon.png" alt="Figma"><span>Figma</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <section id="project" class="project container">
+            <div class="section-heading">
+                <h1>My Project</h1>
+                <p>These are my personal and team projects. You can visit the project sources on my GitHub account.</p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <img src="images/sistem-air-terjun.png" alt="Sistem Air Terjun">
+                    <h2>Sistem Air Terjun</h2>
+                    <p>A user-friendly interface design for a waterfall system, focusing on clear interactions and visual structure.</p>
+                    <a href="https://github.com/kaiRisz/Sistem-Air-Terjun" target="_blank" class="button">See Project</a>
+                </article>
+                <article class="project-card">
+                    <img src="images/sistem-tiket-konser.png" alt="Sistem Tiket Konser">
+                    <h2>Sistem Tiket Konser</h2>
+                    <p>Concert ticket booking system made as a team project to fulfill a distributed data processing assignment.</p>
+                    <a href="https://github.com/kaiRisz/Sistem-Tiket-Konser" target="_blank" class="button">See Project</a>
+                </article>
+                <article class="project-card">
+                    <img src="images/scoring-karate.png" alt="Scoring System for Karate">
+                    <h2>Scoring System for Karate</h2>
+                    <p>User interface for a karate scoring system built to support clarity and ease of use during matches.</p>
+                    <a href="https://github.com/kaiRisz/Kumite-Score-Application" target="_blank" class="button">See Project</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="blog" class="blog container">
+            <div class="section-heading">
+                <h1>My Blog</h1>
+                <p>Here I share thoughts and stories about technology, learning, and web design.</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*n5y9KwQbaJNCnRSMdxMRAw.png" alt="Kenapa Satu Server Tidak Cukup">
+                    <h2>Kenapa Satu Server Tidak Cukup?</h2>
+                    <p>Menjelaskan alasan sistem terdistribusi penting untuk menjaga aplikasi tetap cepat dan dapat diandalkan.</p>
+                    <a href="https://medium.com/@khailanoverisyanurdi/kenapa-satu-server-tidak-cukup-ini-alasan-kita-butuh-sistem-terdistribusi-0f6cff35116f" target="_blank">See Details</a>
+                </article>
+                <article class="blog-card">
+                    <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*FmmS7Ex3r6I2CCKZGOHsrQ.jpeg" alt="Aku Kira Masuk Ilmu Komputer Mudah">
+                    <h2>Aku Kira Masuk Ilmu Komputer Mudah</h2>
+                    <p>Refleksi tentang pengalaman awal belajar ilmu komputer dan harapan untuk terus bertahan dan berkembang.</p>
+                    <a href="https://medium.com/@khailanoverisyanurdi/kenapa-satu-server-tidak-cukup-ini-alasan-kita-butuh-sistem-terdistribusi-0f6cff35116f" target="_blank">See Details</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact container">
+            <div class="section-heading">
+                <h1>Contact Me</h1>
+                <p>Feel free to reach out if you have any questions or want to collaborate.</p>
+            </div>
+            <div class="card contact-card">
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message"></textarea>
+                    <button type="submit" class="button">Send Message</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>© 2026 Khaila Noverisya Nurdi. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>© 2026 Khaila Noverisya Nurdi. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function(){
-
-        const links = document.querySelectorAll("#navbar a");
-        let currentPage = window.location.pathname.split("/").pop();
-
-        if(currentPage === ""){
-            currentPage = "index.html";
-        }
-
-        links.forEach(link => {
-            const linkPage = link.getAttribute("href");
-
-            if(linkPage === currentPage){
-                link.classList.add("nav-active");
-            } else {
-                link.classList.remove("nav-active");
-            }
-        });
-
-    });
-    </script>
-    
+    <script src="script.js"></script>
 </body>
 </html>
